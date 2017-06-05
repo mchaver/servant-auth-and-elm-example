@@ -1,0 +1,45 @@
+name:                servant-auth-and-elm-example
+version:             0.1.0.0
+homepage:            https://github.com/mchaver/servant-auth-and-elm-example#readme
+license:             BSD3
+license-file:        LICENSE
+author:              James M.C. Haver II
+maintainer:          mchaver@gmail.com
+copyright:           PRIVATE
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+data-files:          static/index.html
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Server
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , bytestring
+                     , file-embed
+                     , mtl
+                     , random
+                     , servant        == 0.11
+                     , servant-server == 0.11
+                     , servant-auth
+                     , servant-auth-server >= 0.3 && < 0.4
+                     , text
+                     , time
+                     , wai-app-static
+                     , warp
+  default-language:    Haskell2010
+  ghc-options:         -Wall -Werror
+
+executable servant-auth-and-elm-example
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , servant-auth-and-elm-example
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/mchaver/servant-auth-and-elm-example

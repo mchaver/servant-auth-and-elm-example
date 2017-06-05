@@ -1,0 +1,22 @@
+resolver: lts-8.16
+
+packages:
+- '.'
+- location:
+    git: git@github.com:plow-technologies/servant-auth.git
+    commit: a74cc320b43e791d941a3ed54d5fb29ac1e16511
+  extra-dep: true
+  subdirs:
+    - servant-auth
+    - servant-auth-server
+
+extra-deps: 
+- servant-0.11
+#- servant-auth-server-0.3.0.0
+- servant-server-0.11
+
+
+flags: {}
+
+
+extra-package-dbs: []
